@@ -12,12 +12,11 @@ terraform {
   # cf. https://www.terraform.io/language/settings/backends/azurerm
   backend "azurerm" {
     resource_group_name  = "RG-AKSCluster"         # mettre ici le nom du resource group de vos ressource
-    storage_account_name = "backendterrapierrc"      # mettre le nom du compte de stockage créer dans le lab 1
+    storage_account_name = "terraformglr"      # mettre le nom du compte de stockage créer dans le lab 1
     container_name       = "tfstate"
     key                  = "pipeline-gh.terraform.tfstate" 
     # pour les options d'authentification au backend Azure Storage cf. https://www.terraform.io/language/settings/backends/azurerm
-    # sas_token = "sp=racwdli&st=2022-03-11T14:00:16Z&se=2022-03-11T22:26:16Z&spr=https&sv=2020-08-04&sr=c&sig=iiu05uUa%2Bh9tdqO%2F%2FwJEGZlkeJR5Ufgna1rshTaVv7s%3D"
-        
+    # sas_token = "sp=racwl&st=2022-10-24T14:11:44Z&se=2022-10-25T22:11:44Z&spr=https&sv=2021-06-08&sr=c&sig=DBo0urLsgkaazicWGsdcVNjpdMU8sWrLdvQdGY3ObJI%3D"
   }
   
   required_providers {
@@ -33,10 +32,8 @@ terraform {
       # Check Changelog : https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md
       source  = "hashicorp/azurerm"
       version = "= 2.98.0"
-
     }
-
-}
+  }
 }
 
 # Configure the Azure Provider
