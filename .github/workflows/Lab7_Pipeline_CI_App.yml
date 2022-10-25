@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env: # variables 
-  REGISTRY_NAME: "acrpierrc007"
+  REGISTRY_NAME: "acrwsiaglr"
   APP_NAME: "coolapi"
   IMAGE_VERSION: "1.0.0"
 
@@ -84,11 +84,3 @@ jobs: # 3 jobs qui s'enchaînent à la suite : 1 analyze-code - 2 test-unitaire 
       - name: Push de l'image de l'application
         run: |
           cd API && docker push ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }}
-
-
-        
-
-
-          
-
-
